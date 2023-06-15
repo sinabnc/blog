@@ -30,12 +30,12 @@ const itme1 = new Item({
 })
 const defaultItem=[itme1];
 app.get("/",(req,res)=>{
-  Item.find({}).then((founditem)=>{
-    if(founditem.length===0){
-      Item.insertMany(defaultItem).then(()=>console.log("success")).catch((err)=>console.log(err))
-      res.redirect("/");
+  Item.find({}).then((foundItem)=>{
+    if(foundItem.length===0){
+Item.insertMany(defaultItem).then(()=>console.log("success")).catch((err)=>console.log(err))
+res.redirect("/")
     }else{
-      res.render("home",{posts:founditem})
+      res.render("home",{posts:foundItem})
     }
   })
 })
